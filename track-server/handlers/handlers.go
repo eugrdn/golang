@@ -15,11 +15,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 	url, err := base64.StdEncoding.DecodeString(path)
 	if err != nil {
-		// log.Fatal("Fatal error ", err)
 		writePath(w, path)
 		return
 	}
-	http.Redirect(w, r, "http://"+string(url[:]), http.StatusFound)
+	http.Redirect(w, r, "http://"+string(url), http.StatusFound)
 
 }
 
