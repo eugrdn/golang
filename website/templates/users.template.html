@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Rodin Eugene">
+	<title>GOlang website</title>
+</head>
+<style>
+	body 
+	{
+		font-family: 'Arial', 'Calibri';
+		padding: 30px;
+		background-color: #444;
+	}
+	h1 
+	{
+		text-align: center;
+		text-transform: uppercase;
+		color: #fff;
+	}
+	#users-table 
+	{
+		margin: 50px auto;
+		border-collapse: collapse;
+		cursor: pointer;
+		color: #5d738b;
+		border: 6px #fff solid;
+	}
+	.users-table__first_name 
+	{
+		padding: 10px;
+		text-transform: capitalize;
+	}
+	tr:nth-of-type(even) { background-color: #f2f6fa; }
+	tr:nth-of-type(odd) { background-color: #e3eaf3; }
+	tr:not(users-table__header):hover { background-color: #e2e5e9;}
+	.users-table__header th 
+	{
+		font-size: .75em;
+		margin: 10px;
+		padding: 7px;
+		text-transform: uppercase;
+		border: 2px #fff solid;
+	}
+	td 
+	{
+		margin: 10px;
+		padding: 15px;
+		border: 2px #fff solid;
+	}
+</style>
+<body>
+	<h1>GOlang MVC Website</h1>
+	<table id="users-table">
+		<tr class="users-table__header">
+			<th>first name</th>
+			<th>email</th>
+			<th>username</th>
+		</tr>
+		{{range .}}
+		<tr>
+			<td class="users-table__first_name">{{.FirstName}}</td>
+			<td>{{.Email}}</td>
+			<td>{{.Username}}</td>
+		</tr>
+		{{end}}
+	</table>
+</body>
+</html>
